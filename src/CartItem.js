@@ -1,20 +1,19 @@
-import { reject } from 'lodash';
 import React from 'react';
 
 
 class CartItem extends React.Component {
 
-    constructor(){
-        super();
-        this.state = {
-            price: 999,
-            title: 'phone',
-            qty: 1,
-            img: ''
-        }
-        // this.increaseQuantity=this.increaseQuantity.bind(this);
-        // this.testing();
-    }
+    // constructor(){
+    //     super();
+    //     this.state = {
+    //         price: 999,
+    //         title: 'phone',
+    //         qty: 1,
+    //         img: ''
+    //     }
+    //     // this.increaseQuantity=this.increaseQuantity.bind(this);
+    //     // this.testing();
+    // }
 
     // testing (){
     //     const promise = new Promise((resolve, reject) => {
@@ -63,14 +62,14 @@ class CartItem extends React.Component {
     }
 
     render(){
-        const{price, title, qty} = this.state;
+        const{price, title, qty} = this.props.product;
         return(
             <div className='cart-item'>
                 <div className='left-block'>
                     <img style={styles.image}/>
                 </div>
                 <div className='right-block'>
-                    <div style={{ fontSize: 25 }}>{this.state.title}</div>
+                    <div style={{ fontSize: 25 }}>{title}</div>
                     <div style={{ color: 'red' }}>Rs {price}</div>
                     <div style={{ color: 'blue'  }}>Qty: {qty}</div>
                     <div className='cart-item-actions'>
